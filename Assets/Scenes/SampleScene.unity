@@ -359,8 +359,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1505492707}
-  - component: {fileID: 1505492709}
   - component: {fileID: 1505492708}
+  - component: {fileID: 1505492709}
   - component: {fileID: 1505492710}
   m_Layer: 0
   m_Name: Ground2
@@ -872,8 +872,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1929887267}
-  - component: {fileID: 1929887266}
   - component: {fileID: 1929887265}
+  - component: {fileID: 1929887266}
   - component: {fileID: 1929887268}
   m_Layer: 0
   m_Name: Ground
