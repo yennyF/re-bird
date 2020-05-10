@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14245268}
   - component: {fileID: 14245267}
-  - component: {fileID: 14245269}
+  - component: {fileID: 14245270}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -192,7 +192,7 @@ Transform:
   m_Father: {fileID: 978731632}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &14245269
+--- !u!114 &14245270
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,10 +201,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 14245266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
+  m_Script: {fileID: 11500000, guid: f96de6139c64143949130f25d0da57aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.3
 --- !u!1 &313480715
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,6 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629252719}
+  - component: {fileID: 629252720}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -351,6 +351,19 @@ Transform:
   m_Father: {fileID: 313480716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629252720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629252718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -1.5
 --- !u!1 &654965000
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,6 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 978731632}
+  - component: {fileID: 978731633}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -428,6 +442,19 @@ Transform:
   m_Father: {fileID: 313480716}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978731633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978731631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: -0.5
 --- !u!1 &1578670528
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +609,7 @@ GameObject:
   - component: {fileID: 1846104302}
   - component: {fileID: 1846104306}
   - component: {fileID: 1846104304}
-  - component: {fileID: 1846104305}
+  - component: {fileID: 1846104307}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Untagged
@@ -678,19 +705,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 20.48, y: 2.43}
   m_EdgeRadius: 0
---- !u!114 &1846104305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846104301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: -1.5
 --- !u!50 &1846104306
 Rigidbody2D:
   serializedVersion: 4
@@ -712,6 +726,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1846104307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846104301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96de6139c64143949130f25d0da57aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1897879957
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,7 +748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1897879958}
   - component: {fileID: 1897879959}
-  - component: {fileID: 1897879960}
+  - component: {fileID: 1897879961}
   m_Layer: 0
   m_Name: Sky (1)
   m_TagString: Untagged
@@ -792,7 +818,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1897879960
+--- !u!114 &1897879961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,10 +827,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1897879957}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
+  m_Script: {fileID: 11500000, guid: f96de6139c64143949130f25d0da57aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.3
 --- !u!1 &1924210634
 GameObject:
   m_ObjectHideFlags: 0
@@ -817,7 +842,7 @@ GameObject:
   - component: {fileID: 1924210637}
   - component: {fileID: 1924210639}
   - component: {fileID: 1924210636}
-  - component: {fileID: 1924210638}
+  - component: {fileID: 1924210640}
   m_Layer: 0
   m_Name: Grass (1)
   m_TagString: Untagged
@@ -913,19 +938,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1924210638
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924210634}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577e52f80cae541ff857420b01bb01c4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: -1.5
 --- !u!50 &1924210639
 Rigidbody2D:
   serializedVersion: 4
@@ -947,3 +959,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1924210640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1924210634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f96de6139c64143949130f25d0da57aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
