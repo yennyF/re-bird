@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RepeatingBacground : MonoBehaviour
+public class RepeatingBackground : MonoBehaviour
 {
-    // private BoxCollider2D groundCollider;
+    private BoxCollider2D groundCollider;
     private float groundHorizontalLength;
     void Awake()
     {
-        // groundCollider = GetComponent<BoxCollider2D> ();
+        groundCollider = GetComponent<BoxCollider2D>();
+        Debug.Log(groundCollider);
         // groundHorizontalLength = groundCollider.size.x;
         groundHorizontalLength = 20.48f;
-        Debug.Log(groundHorizontalLength);
     }
 
     private void Update()
