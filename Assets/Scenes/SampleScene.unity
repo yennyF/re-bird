@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layers:
-  - {fileID: 396835039}
   - {fileID: 1408923901}
   - {fileID: 669464979}
   - {fileID: 1174352853}
@@ -256,7 +255,6 @@ GameObject:
   m_Component:
   - component: {fileID: 396835040}
   - component: {fileID: 396835042}
-  - component: {fileID: 396835041}
   m_Layer: 0
   m_Name: Sky
   m_TagString: Untagged
@@ -278,19 +276,6 @@ Transform:
   m_Father: {fileID: 313480716}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &396835041
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 396835039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f96de6139c64143949130f25d0da57aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: -0.4
 --- !u!212 &396835042
 SpriteRenderer:
   m_ObjectHideFlags: 0
