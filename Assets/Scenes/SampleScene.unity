@@ -416,7 +416,6 @@ GameObject:
   m_Component:
   - component: {fileID: 654965002}
   - component: {fileID: 654965001}
-  - component: {fileID: 654965003}
   - component: {fileID: 654965004}
   m_Layer: 0
   m_Name: GameController
@@ -453,23 +452,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &654965003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654965000}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab8f7e011add84b158c41e29a2636771, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poolSize: 5
-  prefab: {fileID: 0}
-  spawnRate: 4
-  spawnMinX: -1
-  spawnMaxX: 1
 --- !u!114 &654965004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawn: {fileID: 6412482276254967044, guid: 7d0295e3a59ad4828b83483d3f9444bc, type: 3}
-  poolSize: 10
+  poolSize: 20
   spawnRate: 1.5
 --- !u!1 &669464979
 GameObject:
@@ -839,7 +821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1578670528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.996, y: 0.21, z: 0}
+  m_LocalPosition: {x: -1.4, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
