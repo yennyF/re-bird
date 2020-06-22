@@ -4,45 +4,131 @@ using UnityEngine;
 
 public class FoodPool : MonoBehaviour
 {
-    public int poolSize = 5;
-    public GameObject prefab;
-    public float spawnRate = 4f;
-    public float spawnMinX = -1.2f;
-    public float spawnMaxX = 1f;
-    
-    private GameObject[] objects;
-    private float spwanXPosition = 4;
-    private int currentIndex;
-    private float timeSinseLastSpwaned = 0;
+    public GameObject spawn;
+    public int poolSize = 20;
+    public float spawnRate = 2f;
 
-    void Start()
+    private float spawnXPosition = 4;
+    private float spawnMinY = -1f;
+    private float spawnMaxY = 1.4f;
+
+    private Vector2 spawnSize;
+    private Vector2 spawnHalfSize;
+    private float spawnMarginLeft;
+    
+    private GameObject[] spawns;
+    private int currentIndex = 0;
+    private float timeSinseLastSpwaned = 0;
+    private GameObject formationSpawnEnd;
+    private int prevIndex;
+
+    void Start ()
     {
-        Vector2 position = new Vector2(0, 3);
-        objects = new GameObject[poolSize];
+        spawn.transform.position = new Vector3( 0, 3, 0 );
+
+        spawns = new GameObject[ poolSize ];
         
-        for(int i = 0; i < poolSize; ++i)
+        for ( int i = 0; i < poolSize; ++i )
         {
-            objects[i] = (GameObject)Instantiate (prefab, position, Quaternion.identity);
+            spawns[ i ] = ( GameObject ) Instantiate( spawn );
         }
-        
+
+        spawnSize = spawn.GetComponent< BoxCollider2D >().size;
+        spawnHalfSize = new Vector2( spawnSize.x, spawnSize.y ) / 2f;
+        spawnMarginLeft = spawnSize.x * 0.1f;
+
     }
 
-    void Update()
+    void Update ()
     {
-        timeSinseLastSpwaned += Time.deltaTime;
 
-        if(GameControl.instance.gameOver == false && timeSinseLastSpwaned > spawnRate)
+        if ( GameControl.instance.gameOver == false) 
         {
-            timeSinseLastSpwaned = 0;
-            
-            float spwanYPosition = Random.Range(spawnMinX, spawnMaxX);
-            objects[currentIndex].transform.position = new Vector3(spwanXPosition, spwanYPosition);
-
-            currentIndex++;
-            if(currentIndex >= poolSize)
+            if ( formationSpawnEnd == null || formationSpawnEnd.transform.position.x <= spawnXPosition )
             {
-                currentIndex = 0;
+                timeSinseLastSpwaned += Time.deltaTime;
+
+                if ( timeSinseLastSpwaned > spawnRate )
+                {
+                    timeSinseLastSpwaned = 0;
+                    
+                    prevIndex = currentIndex;
+
+                    Vector3 position = new Vector3( 
+                        spawnXPosition, 
+                        Random.Range( spawnMinY, spawnMaxY ), 
+                        spawn.transform.position.z
+                    );
+                    spawns[ currentIndex++ ].transform.position = new Vector3( position.x, position.y, position.z );
+                    
+                    if ( currentIndex >= poolSize )
+                    {
+                        currentIndex = 0;
+                    }
+
+                    int amount = Random.Range( 0, 4 );
+
+                    for ( int i = 0; i < amount; ++i )
+                    {
+                        prevIndex = currentIndex;
+
+                        position = formation( position );
+                        spawns[ currentIndex++ ].transform.position = new Vector3( position.x, position.y, position.z );
+                        
+                        if ( currentIndex >= poolSize )
+                        {
+                            currentIndex = 0;
+                        }
+                    }
+
+                    formationSpawnEnd = spawns[ prevIndex ];
+
+                }
             }
         }
     }
+
+    private void Spawn ()
+    {
+
+    }
+
+    private Vector3 formation ( Vector3 position ) 
+    {
+        float option = Random.Range( 1, 3 );
+
+        switch ( option )
+        {
+            case 1: // front
+                return new Vector3(
+                    position.x + spawnSize.x + spawnMarginLeft, 
+                    position.y, 
+                    position.z
+                );
+            case 2: // up
+            {
+                float y = position.y + spawnSize.y;
+
+                return new Vector3(
+                    position.x + spawnSize.x + spawnMarginLeft, 
+                    y + spawnHalfSize.y > spawnMaxY ? position.y : y, 
+                    position.z
+                );
+            }
+            case 3: // bottom
+            {
+                float y = position.y - spawnSize.y;
+
+                return new Vector3(
+                    position.x + spawnSize.x + spawnMarginLeft, 
+                    y - spawnHalfSize.y > spawnMaxY ? position.y : y, 
+                    position.z
+                );
+            }
+        } 
+
+        return position;
+
+    }
+
 }
