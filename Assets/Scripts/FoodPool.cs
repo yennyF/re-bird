@@ -27,10 +27,16 @@ public class FoodPool : MonoBehaviour
         spawn.transform.position = new Vector3( 0, 3, 0 );
 
         spawns = new GameObject[ poolSize ];
-        
+        Debug.Log(Color.blue);
         for ( int i = 0; i < poolSize; ++i )
         {
             spawns[ i ] = ( GameObject ) Instantiate( spawn );
+            float k = Random.Range( 0.0f, 1.0f );
+            Debug.Log( k );
+            if ( k < 0.2f )
+            {
+                spawns[ i ].GetComponent<SpriteRenderer>().color = Color.blue;
+            }
         }
 
         spawnSize = spawn.GetComponent< BoxCollider2D >().size;
