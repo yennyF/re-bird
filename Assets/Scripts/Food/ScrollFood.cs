@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ScrollingBackground : MonoBehaviour
+public class ScrollFood : MonoBehaviour
 {
     
     private Rigidbody2D rb2d;
     [SerializeField]
-    private float scrollSpeed = 0;
+    private float scrollSpeed = -1;
 
     void Start()
     {
