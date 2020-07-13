@@ -66,7 +66,7 @@ public class FoodPool : MonoBehaviour
         }
     }
 
-    private List< int > SpawnCombo()
+    private int[] SpawnCombo()
     {
         List< int > combo = new List< int >();
 
