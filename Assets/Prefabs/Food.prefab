@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6412482276254967046}
   - component: {fileID: 6412482276254967040}
   - component: {fileID: 6412482276254967041}
-  - component: {fileID: 114221651779101872}
+  - component: {fileID: 1630941221456120004}
+  - component: {fileID: 114829195983160196}
   m_Layer: 0
   m_Name: Food
   m_TagString: Untagged
@@ -89,10 +90,10 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6412482276254967044}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.030706003, y: 0.016668946}
@@ -129,7 +130,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114221651779101872
+--- !u!114 &1630941221456120004
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +139,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 6412482276254967044}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93b9b03f2d2884675b940fc9e62fe471, type: 3}
+  m_Script: {fileID: 11500000, guid: ba822d477a0e24ce8b84327ee14b0c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.8
+  scrollSpeed: -1
+--- !u!114 &114829195983160196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6412482276254967044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b621e2791f98b45ffbfa9a68556b62fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

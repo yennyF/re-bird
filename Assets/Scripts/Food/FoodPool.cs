@@ -23,7 +23,7 @@ public class FoodPool : MonoBehaviour
 
     void Start ()
     {
-        spawn.transform.position = new Vector3( 0, 3, 0 );
+        spawn.transform.position = new Vector3( 0, 3, 0 ); // position out of the screen
 
         spawns = new GameObject[ poolSize ];
         
@@ -57,23 +57,22 @@ public class FoodPool : MonoBehaviour
                 {
                     timeSinseLastSpwaned = 0;
                     
-                    List< int > combo = SpawnCombo();
+                    List< GameObject > combo = SpawnCombo();
 
-                    formationSpawnEnd = spawns[ combo.Count - 1 ];
-
+                    formationSpawnEnd = combo[ combo.Count - 1 ];
                 }
             }
         }
     }
 
-    private int[] SpawnCombo()
+    private List< GameObject > SpawnCombo()
     {
-        List< int > combo = new List< int >();
+        List< GameObject > combo = new List< GameObject >();
 
         Vector3 position = new Vector3( spawnStartX, Random.Range( spawnMinY, spawnMaxY ), spawn.transform.position.z );
         spawns[ currentIndex ].transform.position = new Vector3( position.x, position.y, position.z );
 
-        combo.Add( currentIndex );
+        combo.Add( spawns[ currentIndex ] );
 
         currentIndex = ( currentIndex == poolSize - 1 ) ? 0 : currentIndex + 1;
 
@@ -81,10 +80,10 @@ public class FoodPool : MonoBehaviour
 
         for ( int i = 1; i <= amount; ++i )
         {
-            position = Formation( position );
+            position = buildNextFormation( position );
             spawns[ currentIndex ].transform.position = new Vector3( position.x, position.y, position.z );
 
-            combo.Add( currentIndex );
+            combo.Add( spawns[ currentIndex ] );
 
             currentIndex = ( currentIndex == poolSize - 1 ) ? 0 : currentIndex + 1;
         }
@@ -92,7 +91,7 @@ public class FoodPool : MonoBehaviour
         return combo;
     }
 
-    private Vector3 Formation ( Vector3 position ) 
+    private Vector3 buildNextFormation ( Vector3 position ) 
     {
         float option = Random.Range( 1, 3 );
 

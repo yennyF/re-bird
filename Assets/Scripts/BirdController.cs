@@ -4,24 +4,37 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    public float velocity = 1;
+    public float upForce = 200f;
+    // public float velocity = 1;
     private Rigidbody2D rb;
     private Animator animator;
+    private bool isDead = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // Left click | Jump
+        if (isDead == false)
         {
-            animator.SetTrigger("Fly");
-            rb.velocity = Vector2.up * velocity;
+            if (Input.GetMouseButtonDown(0)) // Left click | Jump
+            {
+                // rb.velocity = Vector2.up * velocity;
+                rb.velocity = Vector2.zero;
+                rb.AddForce(new Vector2(0, upForce));
+                animator.SetTrigger("Fly");
+            }
         }
     }
+
+    void OnCollisionEnter2D()
+    {
+        isDead = true;
+        animator.SetTrigger("Die");
+        GameControl.instance.BirdDied();
+    }
+
 }
