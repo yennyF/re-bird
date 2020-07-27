@@ -13,7 +13,6 @@ public class GameControl : MonoBehaviour
     public bool gameOver = false; 
     private int score = 0;
 
-
     void Awake()
     {
         if (instance == null)

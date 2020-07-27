@@ -9,6 +9,7 @@ public class BirdController : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator;
     private bool isDead = false;
+    [System.NonSerialized] public bool isHappy = false;
 
     void Start()
     {
@@ -25,7 +26,14 @@ public class BirdController : MonoBehaviour
                 // rb.velocity = Vector2.up * velocity;
                 rb.velocity = Vector2.zero;
                 rb.AddForce(new Vector2(0, upForce));
-                animator.SetTrigger("Fly");
+
+                animator.SetTrigger("Flap");
+            }
+
+            if (isHappy == true)
+            {
+                animator.Play("Happy");
+                isHappy = false;
             }
         }
     }

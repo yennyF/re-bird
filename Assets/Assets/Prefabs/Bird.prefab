@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: b3512b0effe814816b9c18446d191b80, type: 3}
+  m_Sprite: {fileID: 21300004, guid: b280ae0edd9fb4a0495c2044f07ee6b4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -135,10 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeaee8068c95e89438a157f96efe1de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 3.5
-  flying: {fileID: 0}
-  falling: {fileID: 0}
-  dying: {fileID: 0}
+  upForce: 200
 --- !u!70 &1062865280697393158
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

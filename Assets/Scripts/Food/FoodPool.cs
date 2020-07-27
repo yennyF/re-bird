@@ -14,7 +14,7 @@ public class FoodPool : MonoBehaviour
 
     private Vector2 spawnSize;
     private Vector2 spawnHalfSize;
-    private float spawnMarginLeft;
+    private float spawnSpaceWidth;
     
     private GameObject[] spawns;
     private int currentIndex = 0;
@@ -31,16 +31,16 @@ public class FoodPool : MonoBehaviour
         {
             spawns[ i ] = ( GameObject ) Instantiate( spawn );
 
-            float k = Random.Range( 0.0f, 1.0f );
-            if ( k < 0.2f ) // temporal test
-            {
-                spawns[ i ].GetComponent< SpriteRenderer >().color = Color.blue;
-            }
+            // float k = Random.Range( 0.0f, 1.0f );
+            // if ( k < 0.2f ) // temporal test
+            // {
+            //     spawns[ i ].GetComponent< SpriteRenderer >().color = Color.blue;
+            // }
         }
 
         spawnSize = spawn.GetComponent< BoxCollider2D >().size;
         spawnHalfSize = new Vector2( spawnSize.x, spawnSize.y ) / 2f;
-        spawnMarginLeft = spawnSize.x * 0.4f;
+        spawnSpaceWidth = spawnSize.x * 0.6f;
 
     }
 
@@ -67,21 +67,41 @@ public class FoodPool : MonoBehaviour
 
     private List< GameObject > SpawnCombo()
     {
+        // int amount = Random.Range( 1, 6 ); // min [inclusive] and max [exclusive]
+        int amount = 5;
         List< GameObject > combo = new List< GameObject >();
 
         Vector3 position = new Vector3( spawnStartX, Random.Range( spawnMinY, spawnMaxY ), spawn.transform.position.z );
         spawns[ currentIndex ].transform.position = new Vector3( position.x, position.y, position.z );
+        spawns[ currentIndex ].GetComponent<Food>().foo = ( amount == 5 ) ? true : false;
 
         combo.Add( spawns[ currentIndex ] );
 
         currentIndex = ( currentIndex == poolSize - 1 ) ? 0 : currentIndex + 1;
 
-        int amount = Random.Range( 0, 4 );
-
-        for ( int i = 1; i <= amount; ++i )
+        for ( int i = 2; i <= amount; ++i )
         {
-            position = buildNextFormation( position );
+            float x = position.x + spawnSize.x + spawnSpaceWidth;
+            float y = 0;
+
+            switch ( Random.Range( 1, 3 ) )
+            {
+                case 1: // front
+                    y = position.y;
+                    break;
+                case 2: // up
+                    y = position.y + spawnSize.y + spawnHalfSize.y;
+                    y = y > spawnMaxY ? position.y : y;
+                    break;
+                case 3: // bottom
+                    y = position.y - spawnSize.y - spawnHalfSize.y;
+                    y = y < spawnMinY ? position.y : y;
+                    break;
+            } 
+
+            position.Set( x, y, position.z);
             spawns[ currentIndex ].transform.position = new Vector3( position.x, position.y, position.z );
+            spawns[ currentIndex ].GetComponent<Food>().foo = ( amount == 5 ) ? true : false;
 
             combo.Add( spawns[ currentIndex ] );
 
@@ -90,31 +110,4 @@ public class FoodPool : MonoBehaviour
 
         return combo;
     }
-
-    private Vector3 buildNextFormation ( Vector3 position ) 
-    {
-        float option = Random.Range( 1, 3 );
-
-        float x = position.x + spawnSize.x + spawnMarginLeft;
-
-        switch ( option )
-        {
-            case 1: // front
-                return new Vector3( x, position.y, position.z );
-            case 2: // up
-            {
-                float y = position.y + spawnSize.y + spawnHalfSize.y;
-                return new Vector3( x, y > spawnMaxY ? position.y : y, position.z );
-            }
-            case 3: // bottom
-            {
-                float y = position.y - spawnSize.y - spawnHalfSize.y;
-                return new Vector3( x, y > spawnMaxY ? position.y : y, position.z );
-            }
-        } 
-
-        return position;
-
-    }
-
 }
