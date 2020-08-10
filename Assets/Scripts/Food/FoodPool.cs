@@ -30,6 +30,7 @@ public class FoodPool : MonoBehaviour
         for ( int i = 0; i < poolSize; ++i )
         {
             spawns[ i ] = ( GameObject ) Instantiate( spawn );
+            spawns[ i ].tag = "Food";
 
             // float k = Random.Range( 0.0f, 1.0f );
             // if ( k < 0.2f ) // temporal test

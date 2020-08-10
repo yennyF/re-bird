@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37312013, g: 0.3807403, b: 0.35872707, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -205,13 +205,87 @@ RectTransform:
   - {fileID: 1864921358}
   - {fileID: 472785958}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &292415960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292415962}
+  - component: {fileID: 292415961}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &292415961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292415960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3462736a87099e4d9f123685a79ac36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Flap
+    clip: {fileID: 8300000, guid: 03183406b02dcad45ba6674e27b7c7dc, type: 3}
+    volume: 0.146
+    pitch: 3
+    loop: 0
+    source: {fileID: 0}
+  - name: Eat
+    clip: {fileID: 8300000, guid: 66cc096703fce764e9845397587d7cbb, type: 3}
+    volume: 0.226
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MainTheme
+    clip: {fileID: 8300000, guid: 03d96766ef9c2564db96d0f14c25a2b2, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Collect
+    clip: {fileID: 8300000, guid: b922d616d705afc40bc780ed6e0bf4bf, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: BirdSound
+    clip: {fileID: 8300000, guid: 2959b95bbd82fe640bd8b5c46f78cee4, type: 3}
+    volume: 0.301
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &292415962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292415960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &313480715
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,7 +321,7 @@ Transform:
   - {fileID: 669464980}
   - {fileID: 1740809881}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &313480717
 MonoBehaviour:
@@ -644,7 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472785957
 GameObject:
@@ -883,7 +957,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &604157634
 PrefabInstance:
@@ -930,7 +1004,7 @@ PrefabInstance:
     - target: {fileID: 6685510679186492548, guid: f1f2439bbe9b8e9489a2e71b585fe330,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6685510679186492548, guid: f1f2439bbe9b8e9489a2e71b585fe330,
         type: 3}
@@ -962,12 +1036,18 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0.21
       objectReference: {fileID: 0}
+    - target: {fileID: 6685510679186492568, guid: f1f2439bbe9b8e9489a2e71b585fe330,
+        type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 292415961}
     - target: {fileID: 6685510679186492571, guid: f1f2439bbe9b8e9489a2e71b585fe330,
         type: 3}
       propertyPath: m_Name
       value: Bird
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8185384469793999974, guid: f1f2439bbe9b8e9489a2e71b585fe330, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f1f2439bbe9b8e9489a2e71b585fe330, type: 3}
 --- !u!1 &654965000
 GameObject:
@@ -1014,7 +1094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &654965004
 MonoBehaviour:
@@ -1218,7 +1298,7 @@ RectTransform:
   - {fileID: 1596959790}
   - {fileID: 938354112}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

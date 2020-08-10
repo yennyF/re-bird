@@ -15,6 +15,9 @@ public class Food : MonoBehaviour
 
             GameControl.instance.BirdScored();
 
+            // ! Need to be optimized
+            FindObjectOfType<AudioManager>().Play("Eat");
+
             if (foo == true) 
             {
                 bar++;
@@ -22,6 +25,8 @@ public class Food : MonoBehaviour
                 if (bar == 5)
                 {
                     other.GetComponent<BirdController>().isHappy = true;
+                    //FindObjectOfType<AudioManager>().Play("BirdSound");
+                    FindObjectOfType<AudioManager>().Play("Collect");
                     bar = 0;
                 }
             }

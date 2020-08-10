@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
+    public AudioManager audioManager;
     public float upForce = 200f;
     // public float velocity = 1;
     private Rigidbody2D rb;
@@ -28,6 +29,8 @@ public class BirdController : MonoBehaviour
                 rb.AddForce(new Vector2(0, upForce));
 
                 animator.SetTrigger("Flap");
+
+                audioManager.Play("Flap");
             }
 
             if (isHappy == true)

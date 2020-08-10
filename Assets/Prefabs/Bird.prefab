@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6685510679186492569}
   - component: {fileID: 6685510679186492568}
   - component: {fileID: 6685510679186492549}
+  - component: {fileID: 8185384469793999974}
   m_Layer: 0
   m_Name: Bird
   m_TagString: Untagged
@@ -152,3 +153,16 @@ CapsuleCollider2D:
   m_Offset: {x: 0.00000010418243, y: -0.0010545106}
   m_Size: {x: 0.4823601, y: 0.39800426}
   m_Direction: 1
+--- !u!114 &8185384469793999974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6685510679186492571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c54b99c67dbdf54c8681402fc0eb2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eatSound: {fileID: 8300000, guid: 66cc096703fce764e9845397587d7cbb, type: 3}
