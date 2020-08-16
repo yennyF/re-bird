@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    public AudioManager audioManager;
+    private AudioManager audioManager;
     public float upForce = 200f;
     // public float velocity = 1;
     private Rigidbody2D rb;
@@ -16,6 +16,7 @@ public class BirdController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        audioManager = AudioManager.instance;
     }
 
     void Update()
