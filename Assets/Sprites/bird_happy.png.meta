@@ -2,12 +2,12 @@ fileFormatVersion: 2
 guid: de87712ccf9d3436bb919995e1b27992
 TextureImporter:
   fileIDToRecycleName:
-    21300000: bird_happy_0
+    21300000: bird_happy_5
     21300002: bird_happy_1
     21300004: bird_happy_2
-    21300006: bird_happy_4
-    21300008: bird_happy_1
-    21300010: bird_happy_5
+    21300006: bird_happy_5
+    21300008: bird_happy_4
+    21300010: bird_happy_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -90,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: bird_happy_2
+      name: bird_happy_5
       rect:
         serializedVersion: 2
-        x: 49
+        x: 77
         y: 4
         width: 18
-        height: 23
+        height: 26
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -104,27 +104,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c15898f61fd07487fbd9bb80e728d21c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: bird_happy_4
-      rect:
-        serializedVersion: 2
-        x: 70
-        y: 4
-        width: 18
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d598d33c54b89407b944552816c41dfb
+      spriteID: 9386d94b0cf6445b6b9aaa502804f21e
       vertices: []
       indices: 
       edges: []
@@ -133,7 +113,27 @@ TextureImporter:
       name: bird_happy_1
       rect:
         serializedVersion: 2
-        x: 7
+        x: 1
+        y: 4
+        width: 18
+        height: 16
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6369e84569bfd4f869a855c6bb9988b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_happy_2
+      rect:
+        serializedVersion: 2
+        x: 20
         y: 4
         width: 18
         height: 23
@@ -144,16 +144,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf8906952ac194904a9344d1e8feafe5
+      spriteID: dbcd5e7fb5ffc409cb898fcf4c07e6c0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bird_happy_5
+      name: bird_happy_3
       rect:
         serializedVersion: 2
-        x: 28
+        x: 39
         y: 4
         width: 18
         height: 24
@@ -164,7 +164,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 337ed2e4ae2d4436395522e06c43678a
+      spriteID: 6f43904076e654efa85b622846bb6b19
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bird_happy_4
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 4
+        width: 18
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8447f2c00a38a4ceb846706bd77fb0a5
       vertices: []
       indices: 
       edges: []
@@ -172,7 +192,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 34ab7be6e9df747529f0a5795690ae59
+    spriteID: d4985c11a4ab34181bd246469989f730
     vertices: []
     indices: 
     edges: []
